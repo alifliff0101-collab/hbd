@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎂 Happy Birthday Sayang Awull 🎉</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background-size: 400% 400%;
+    animation: bgShift 12s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: white;
+    text-align: center;
+  }
+
+  @keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  h1 {
+    font-size: 2.8em;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  p {
+    font-size: 1.3em;
+    margin: 10px 20px;
+    background: rgba(255,255,255,0.25);
+    padding: 10px 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  }
+
+  img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(255,255,255,0.7);
+    animation: pop 2s ease-in-out;
+  }
+
+  @keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  button {
+    margin-top: 12px;
+    background: white;
+    color: #ff4757;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    background: #ff6b81;
+    color: white;
+  }
+
+  .balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    border-radius: 50%;
+    animation: floatUp 8s infinite ease-in;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+  }
+
+  .b1 { left: 10%; background: #ff6b81; animation-delay: 0s; }
+  .b2 { left: 25%; background: #70a1ff; animation-delay: 2s; }
+  .b3 { left: 45%; background: #ffa502; animation-delay: 4s; }
+  .b4 { left: 65%; background: #2ed573; animation-delay: 1s; }
+  .b5 { left: 80%; background: #ff7f50; animation-delay: 3s; }
+
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    top: 0;
+    opacity: 0.8;
+    animation: fall 5s infinite linear;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+  }
+
+  .heart {
+    position: fixed;
+    bottom: 0;
+    color: #ff3366;
+    font-size: 24px;
+    animation: fly 4s linear;
+    opacity: 0.8;
+  }
+
+  @keyframes fly {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+  }
+
+  .visualizer {
+    position: fixed;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 60px;
+    gap: 5px;
+  }
+
+  .bar {
+    width: 6px;
+    background: white;
+    border-radius: 3px;
+    animation: pulse 1s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% { height: 10px; opacity: 0.6; }
+    50% { height: 60px; opacity: 1; }
+  }
+
+  .marquee {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 1.2em;
+    padding: 8px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  }
+
+  .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 15s linear infinite;
+    background: linear-gradient(90deg, #ff6b81, #ff9a9e, #70a1ff, #2ed573, #ffa502);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+
+  @keyframes scrollText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  audio { display: none; }
+</style>
+</head>
+<body>
+
+<img id="foto" src="https://image2url.com/images/1760983052311-0782b95f-70d6-440e-9a78-d45d80109ace.jpg" alt="Foto Awull">
+<h1 id="judul">🎉 Selamat Ulang Tahun, Sayang Awull! 🎂</h1>
+<p id="pesan">FROM ALIPP GANTENGGG 😝</p>
+
+<!-- Tombol -->
+<button onclick="ubahTeks()">Ubah Teks ✍️</button>
+<button onclick="ubahFoto()">Ganti Foto 📸</button>
+<button onclick="putarLagu()">🎵 Putar Lagu: Thank You For Everything</button>
+
+<!-- Pemutar lagu -->
+<audio id="lagu">
+  <source src="diego_gonzalez-thankyou_for_everything.mp3" type="audio/mpeg">
+</audio>
+
+<div class="visualizer" id="visualizer"></div>
+
+<!-- Balon -->
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="balloon b3"></div>
+<div class="balloon b4"></div>
+<div class="balloon b5"></div>
+
+<!-- Banner cinta berjalan -->
+<div class="marquee">
+  <span>💖 Happy Birthday Sayang Awull 💖 Semoga hari-harimu selalu bahagia, penuh cinta, dan penuh tawa bersama Alipp gantenggg 😍💫</span>
+</div>
+
+<script>
+// confetti warna-warni
+for (let i = 0; i < 40; i++) {
+  const confetti = document.createElement("div");
+  confetti.className = "confetti";
+  confetti.style.left = Math.random() * 100 + "vw";
+  confetti.style.backgroundColor = ["#ff4757","#fffa65","#2ed573","#70a1ff","#ffa502"][Math.floor(Math.random()*5)];
+  confetti.style.animationDelay = Math.random() * 5 + "s";
+  document.body.appendChild(confetti);
+}
+
+function ubahTeks() {
+  const nama = prompt("AULIA EKA NOVITASARI:");
+  const ucapan = prompt("Happy birthday sayangg,semoga yang di semogakan tersemogakan,doa terbaik untuk kamuu,aku ga bisa bilang apa apa aku cuma mau bilang makasih banyak udah mau sama aku sejauh ini dan nemenin hari hari akuu,makasihhh banyakkk pokonyaa,oh iya jangan cengeng lagi yaa dan jangan kangen mantan mulu aku cemburu hehee whoop whoop whoop,dah ah bingung ,AKU SAYANGGG KAMUU. YEUU TUAAA .oh ya kado nya nyusul ya heheeee lagi di tahan beacukai kayanya,❤️❤️❤️:");
+  if (nama) document.getElementById("judul").innerHTML = "🎉 Selamat Ulang Tahun, " + nama + "! 🎂";
+  if (ucapan) document.getElementById("pesan").innerHTML = ucapan;
+}
+
+function ubahFoto() {
+  const url = prompt("JANGAN DI UBAH SAYANG:");
+  if (url) document.getElementById("foto").src = url;
+}
+
+// Play lagu manual
+function putarLagu() {
+  const lagu = document.getElementById("lagu");
+  if (lagu.paused) {
+    lagu.play();
+    buatHati();
+    buatVisualizer();
+  } else {
+    lagu.pause();
+    document.getElementById("visualizer").innerHTML = "";
+  }
+}
+
+// efek hati
+function buatHati() {
+  for (let i = 0; i < 20; i++) {
+    setTimeout(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = ["💖","💘","💝","❤️","💕"][Math.floor(Math.random()*5)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+      heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, i * 150);
+  }
+}
+
+// visualizer
+function buatVisualizer() {
+  const visualizer = document.getElementById("visualizer");
+  visualizer.innerHTML = "";
+  for (let i = 0; i < 25; i++) {
+    const bar = document.createElement("div");
+    bar.classList.add("bar");
+    bar.style.animationDelay = (i * 0.1) + "s";
+    bar.style.backgroundColor = ["#fff","#ff9a9e","#fad0c4","#ff6b81","#ffa502"][i % 5];
+    visualizer.appendChild(bar);
+  }
+}
+</script>
+
+</body>
+</html>
